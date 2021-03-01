@@ -1,0 +1,64 @@
+
+Example #1
+|x|x|x|
+|x|x|x|
+|x|x|x|
+
+Example #2
+|0|x|x|
+|0|x|x|
+|0|x|x|
+
+Example #3
+|x|x|x|
+|x|0|x|
+|x|x|x|
+
+
+
+Example #4
+|x|x|x|
+|0|0|0|
+|x|x|x|
+
+
+
+Example #5
+|x|x|x|
+|x|x|x|
+|x|0|0|
+
+
+
+Example #6
+|x|x|x|
+|x|0|0|
+|x|0|0|
+
+
+
+Example #7
+|x|0|x|
+|0|0|0|
+|x|0|x|
+
+
+
+Example #8
+|x|0|0|
+|m|m|m|
+|x|0|0|
+
+
+
+Example #9
+|6|0|5|
+|4|0|3|
+|2|0|1|
+
+
+
+Example #10
+|8|0|5|
+|3|0|2|
+|1|0|1|
