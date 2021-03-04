@@ -1,31 +1,56 @@
 
-<link rel="stylesheet" href="style.css">
 <?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+include 'functions.php';
+?>
 
+<link rel="stylesheet" href="style.css">
 
-$content=file_get_contents('tictactoe_db.json');
-$entries = json_decode($content, true);
+<?php
+
+if (array_key_exists('reset', $_REQUEST)) {
+    resetEntries();
+    echo "RESET";
+}
+
+//array_key_exists('reset', $_REQUEST) && (resetEntries() || print("RESET"));
+
+$entries = getEntries();
+
+$table = &getTable($entries);
 
 if (array_key_exists('r', $_REQUEST) && array_key_exists('c', $_REQUEST)) {
-    echo "<h3>r=" . $_REQUEST['r'] . "; c= " . $_REQUEST['c'] . "</h3>";
+    $r = $_REQUEST['r'];
+    $c = $_REQUEST['c'];
+    echo "<h3>r=" . $r . "; c= " . $c . "</h3>";
+    if (
+        !array_key_exists($r, $table) ||
+        !array_key_exists($c, $table[$r]) ||
+        $table[$r][$c] === ''
+    ) {
+        $entries['count'] = array_key_exists('count', $entries) ? $entries['count'] + 1 : 1;
+        $table[$r][$c] = $entries['count'] % 2 === 0 ? 'o' : "x";
+        saveEntries($entries);
+    }
 }
-$entries[$_REQUEST['r']][ $_REQUEST['c']] = 'x';
-file_put_contents('tictactoe_db.json', json_encode($entries));
-
 
 ?>
 
 <div class="container">
-    <?php for($r = 0; $r < 3; $r++): ?>
-        <?php for($c = 0; $c < 3; $c++): ?>
-          
-<a href="?r=<?=$r?>&c=<?=$c?>"><?=$entries[$r][$c] ; ?></a>
-        <?php endfor;?>
-    <?php endfor;?>
+    <?php
+    for ($r = 0; $r < 3; $r++) {
+        for ($c = 0; $c < 3; $c++) {
+            $value = (
+                array_key_exists($r,$table) &&
+                array_key_exists($c,$table[$r])
+                ) ? $table[$r][$c] : '';
+            echo "<a href='?r=$r&c=$c'>" . $value . "</a>";
+        }
+    }
+    ?>
 </div>
 
-<pre><?=print_r($entries, true)?></pre>
+<a href="?reset=Reset">RESET</a>
