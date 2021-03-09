@@ -44,7 +44,7 @@ if (array_key_exists('r', $_REQUEST) && array_key_exists('c', $_REQUEST)) {
 
  
   
-    
+    getEntry($table, $r, $c);
 
     $winner = checkWiner($table[$r][0], $table[$r][1], $table[$r][2]);
     if ($winner != '') {
