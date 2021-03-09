@@ -22,7 +22,7 @@ $entries = getEntries();
 
 $table = &getTable($entries);
 
-
+$n= $r--;
 
 if (array_key_exists('r', $_REQUEST) && array_key_exists('c', $_REQUEST)) {
     $r = $_REQUEST['r'];
@@ -41,6 +41,7 @@ if (array_key_exists('r', $_REQUEST) && array_key_exists('c', $_REQUEST)) {
     }
     
 }
+
 ?>
 <div class="container">
     <?php 
@@ -48,8 +49,10 @@ if (array_key_exists('r', $_REQUEST) && array_key_exists('c', $_REQUEST)) {
             for ($c=0; $c<=9; $c++) {
                 $value = (
                     array_key_exists($r,$table) &&
-                    array_key_exists($c,$table[$r])
+                    array_key_exists($c,$table[$r])&&
+                    $r === 9
                     ) ? $table[$r][$c] : '';
+
                 if ($r === 9 && $c === 2) {
                     $value = 'x';
                 }

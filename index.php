@@ -44,30 +44,28 @@ if (array_key_exists('r', $_REQUEST) && array_key_exists('c', $_REQUEST)) {
 
  
   
-    getEntry($table, $r, $c);
+ 
 
-    $winner = checkWiner($table[$r][0], $table[$r][1], $table[$r][2]);
+    $winner = checkWiner(getEntry($table, $r, 0), getEntry($table, $r, 1), getEntry($table, $r, 2));
+    if ($winner != '') {
+        echo($winner. ' wins');
+    }
+
+    $winner = checkWiner(getEntry($table, 0, $c), getEntry($table, 1, $c), getEntry($table, 2, $c));
     if ($winner != '') {
         echo($winner. ' wins');
     }
   
-    getEntry($table, $r, $c);
-    $winner = checkWiner($table[0][$c], $table[1][$c], $table[2][$c]);
-    if ($winner != '') {
-        echo($winner. ' wins');
-    }
-  
-    $winner = checkWiner($table[1][1], $table[0][2], $table[2][0]);
+    $winner = checkWiner(getEntry($table, 1, 1), getEntry($table, 0, 2), getEntry($table, 2, 0));
     if ($winner != '') {
         echo($winner. ' wins');
     }
 
-    $winner = checkWiner($table[1][1], $table[0][0], $table[2][2]);
+    $winner = checkWiner(getEntry($table, 1, 1), getEntry($table, 0, 0), getEntry($table, 2, 2));
     if ($winner != '') {
         echo($winner. ' wins');
     }
-  }
-
+}
 
 
 // Second variant with foreach
