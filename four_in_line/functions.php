@@ -22,3 +22,14 @@ function saveEntries($entries) {
 function resetEntries() {
     file_put_contents('tictactoe_db.json', '');
 }
+
+function getEntry($table, $r, $c) {
+    if (
+        array_key_exists($r,$table) &&
+                array_key_exists($c,$table[$r])
+                ) {
+                    return $table[$r][$c];
+                } 
+    return ' ';
+}
+
