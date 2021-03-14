@@ -30,6 +30,119 @@ function getEntry($table, $r, $c) {
                 ) {
                     return $table[$r][$c];
                 } 
-    return ' ';
+    return '';
 }
 
+function noValueOnRowDown ($table, $r, $c) {
+    if ($r == 9 || getEntry($table, $r + 1, $c)) {
+return true;
+    }
+    return false;
+}
+
+function checkWinner1($table, $r, $c) {
+    if (getEntry($table, $r+1, $c) ==
+        getEntry($table, $r+2, $c) &&
+        getEntry($table, $r+2, $c)==
+        getEntry($table, $r+3, $c))
+        if (
+        getEntry($table, $r+1, $c) ==
+        getEntry($table, $r, $c))
+         {
+return $table[$r][$c];     
+    }
+    else {
+return '';
+    }
+}   
+    
+function checkWinner2($table, $r, $c) {
+    if (getEntry($table, $r+1, $c-1) ==
+        getEntry($table, $r+2, $c-2) &&
+        getEntry($table, $r+2, $c-2)==
+        getEntry($table, $r+3, $c-3))
+        if (
+        getEntry($table, $r+1, $c-1) ==
+        getEntry($table, $r, $c))
+         {
+return $table[$r][$c];     
+    }
+    else {
+return '';
+    }
+}   
+function checkWinner3($table, $r, $c) {
+    if (getEntry($table, $r+1, $c+1) ==
+        getEntry($table, $r+2, $c+2) &&
+        getEntry($table, $r+2, $c+2)==
+        getEntry($table, $r+3, $c+3))
+        if (
+        getEntry($table, $r+1, $c+1) ==
+        getEntry($table, $r, $c))
+         {
+return $table[$r][$c];     
+    }
+    else {
+return '';
+    }
+}   
+function checkWinner4($table, $r, $c) {
+    if (getEntry($table, $r, $c+1) ==
+        getEntry($table, $r, $c+2) &&
+        getEntry($table, $r, $c+2)==
+        getEntry($table, $r, $c+3))
+        if (
+        getEntry($table, $r, $c+1) ==
+        getEntry($table, $r, $c))
+         {
+return $table[$r][$c];     
+    }
+    else {
+return '';
+    }
+}   
+function checkWinner5($table, $r, $c) {
+    if (getEntry($table, $r, $c-1) ==
+        getEntry($table, $r, $c-2) &&
+        getEntry($table, $r, $c-2)==
+        getEntry($table, $r, $c-3))
+        if (
+        getEntry($table, $r, $c-1) ==
+        getEntry($table, $r, $c))
+         {
+return $table[$r][$c];     
+    }
+    else {
+return '';
+    }
+}   
+function checkWinner6($table, $r, $c) {
+    if (getEntry($table, $r, $c+1) ==
+        getEntry($table, $r, $c-1) &&
+        getEntry($table, $r, $c-1)==
+        getEntry($table, $r, $c-2))
+        if (
+        getEntry($table, $r, $c-1) ==
+        getEntry($table, $r, $c))
+         {
+return $table[$r][$c];     
+    }
+    else {
+return '';
+    }
+}   
+function checkWinner7($table, $r, $c) {
+    if (getEntry($table, $r, $c-1) ==
+        getEntry($table, $r, $c+1) &&
+        getEntry($table, $r, $c+1)==
+        getEntry($table, $r, $c+2))
+        if (
+        getEntry($table, $r, $c-1) ==
+        getEntry($table, $r, $c))
+         {
+return $table[$r][$c];     
+    }
+    else {
+return '';
+    }
+}   
