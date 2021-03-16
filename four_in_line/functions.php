@@ -39,110 +39,176 @@ return true;
     }
     return false;
 }
+// function checkWinner($element1, $element2, $element3) {
+//     if(
+//        getEntry($element1) == getEntry($element2) &&
+//        getEntry($element2) == getEntry($element3) &&
+//        getEntry($element3) == getEntry($table, $r, $c))
+//     {
+        
+//     return $table[$r][$c];
+//     }
+//     else {
+//       return '';
+//     }
+// } 
+
 
 function checkWinner1($table, $r, $c) {
-    if (getEntry($table, $r+1, $c) ==
+    if (
+        getEntry($table, $r+1, $c) ==
         getEntry($table, $r+2, $c) &&
         getEntry($table, $r+2, $c)==
-        getEntry($table, $r+3, $c))
+        getEntry($table, $r+3, $c)){
         if (
         getEntry($table, $r+1, $c) ==
         getEntry($table, $r, $c))
          {
-return $table[$r][$c];     
+         
+        return $table[$r][$c]; 
+         }
     }
     else {
-return '';
+        return '';
     }
-}   
+ 
+} 
     
 function checkWinner2($table, $r, $c) {
-    if (getEntry($table, $r+1, $c-1) ==
+    if (
+        getEntry($table, $r+1, $c-1) ==
         getEntry($table, $r+2, $c-2) &&
         getEntry($table, $r+2, $c-2)==
-        getEntry($table, $r+3, $c-3))
+        getEntry($table, $r+3, $c-3)) {
         if (
         getEntry($table, $r+1, $c-1) ==
-        getEntry($table, $r, $c))
+        getEntry($table, $r, $c)) 
          {
-return $table[$r][$c];     
+        return $table[$r][$c]; 
+        }
     }
     else {
-return '';
+        return '';
     }
 }   
 function checkWinner3($table, $r, $c) {
-    if (getEntry($table, $r+1, $c+1) ==
+    if (
+        getEntry($table, $r+1, $c+1) ==
         getEntry($table, $r+2, $c+2) &&
         getEntry($table, $r+2, $c+2)==
-        getEntry($table, $r+3, $c+3))
+        getEntry($table, $r+3, $c+3)) {
         if (
         getEntry($table, $r+1, $c+1) ==
-        getEntry($table, $r, $c))
+        getEntry($table, $r, $c)) 
          {
-return $table[$r][$c];     
-    }
+        return $table[$r][$c]; 
+        }
+   }
     else {
-return '';
+        return '';
     }
 }   
 function checkWinner4($table, $r, $c) {
-    if (getEntry($table, $r, $c+1) ==
+    if (
+        getEntry($table, $r, $c+1) ==
         getEntry($table, $r, $c+2) &&
         getEntry($table, $r, $c+2)==
-        getEntry($table, $r, $c+3))
+        getEntry($table, $r, $c+3)) {
         if (
         getEntry($table, $r, $c+1) ==
         getEntry($table, $r, $c))
          {
-return $table[$r][$c];     
-    }
+        return $table[$r][$c]; 
+        }
+   }
     else {
-return '';
+        return '';
     }
 }   
 function checkWinner5($table, $r, $c) {
-    if (getEntry($table, $r, $c-1) ==
+    if (
+        getEntry($table, $r, $c-1) ==
         getEntry($table, $r, $c-2) &&
         getEntry($table, $r, $c-2)==
-        getEntry($table, $r, $c-3))
+        getEntry($table, $r, $c-3)) {
         if (
         getEntry($table, $r, $c-1) ==
         getEntry($table, $r, $c))
          {
-return $table[$r][$c];     
-    }
+        return $table[$r][$c]; 
+        }
+   }
     else {
-return '';
+        return '';
     }
 }   
 function checkWinner6($table, $r, $c) {
-    if (getEntry($table, $r, $c+1) ==
+    if (
+        getEntry($table, $r, $c+1) ==
         getEntry($table, $r, $c-1) &&
         getEntry($table, $r, $c-1)==
-        getEntry($table, $r, $c-2))
+        getEntry($table, $r, $c-2)) {
         if (
         getEntry($table, $r, $c-1) ==
         getEntry($table, $r, $c))
          {
-return $table[$r][$c];     
+        return $table[$r][$c]; 
+        }
     }
     else {
-return '';
+        return '';
     }
 }   
 function checkWinner7($table, $r, $c) {
-    if (getEntry($table, $r, $c-1) ==
+    if (
+        getEntry($table, $r, $c-1) ==
         getEntry($table, $r, $c+1) &&
         getEntry($table, $r, $c+1)==
-        getEntry($table, $r, $c+2))
+        getEntry($table, $r, $c+2)) {
         if (
         getEntry($table, $r, $c-1) ==
         getEntry($table, $r, $c))
          {
-return $table[$r][$c];     
-    }
+        return $table[$r][$c]; 
+        }
+   }
     else {
-return '';
+        return '';
+    }
+}   
+function checkWinner8($table, $r, $c) {
+    if (
+        getEntry($table, $r+1, $c-1) ==
+        getEntry($table, $r-1, $c+1) &&
+        getEntry($table, $r-1, $c+1)==
+        getEntry($table, $r-2, $c+2)) {
+        if (
+        getEntry($table, $r-1, $c+1) ==
+        getEntry($table, $r, $c))
+         {
+
+        return $table[$r][$c]; 
+        }
+   }
+    else {
+        return '';
+    }
+}   
+function checkWinner9($table, $r, $c) {
+    if (
+        getEntry($table, $r+1, $c-1) ==
+        getEntry($table, $r+2, $c-2) &&
+        getEntry($table, $r+2, $c-2)==
+        getEntry($table, $r-1, $c+1)) {
+        if (
+        getEntry($table, $r-1, $c+1) ==
+        getEntry($table, $r, $c))
+         {
+
+        return $table[$r][$c]; 
+        }
+   }
+    else {
+        return '';
     }
 }   

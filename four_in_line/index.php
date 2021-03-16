@@ -39,6 +39,7 @@ if (array_key_exists('r', $_REQUEST) && array_key_exists('c', $_REQUEST)) {
         $entries['count'] = array_key_exists('count', $entries) ? $entries['count'] + 1 : 1;
         $table[$r][$c] = $entries['count'] % 2 === 0 ? 'o' : "x"; 
         saveEntries($entries);
+       
         $winner = checkWinner1($table, $r, $c);
         if ($winner != '') {
             echo($winner. ' wins') . "<br>";
@@ -76,6 +77,18 @@ if (array_key_exists('r', $_REQUEST) && array_key_exists('c', $_REQUEST)) {
             resetEntries(). "<br>";
         }  
         $winner = checkWinner7($table, $r, $c);
+        if ($winner != '') {
+            echo($winner. ' wins') . "<br>";
+            echo('game over'). "<br>";
+            resetEntries();
+        }  
+     $winner = checkWinner8($table, $r, $c);
+        if ($winner != '') {
+            echo($winner. ' wins') . "<br>";
+            echo('game over'). "<br>";
+            resetEntries();
+        }  
+        $winner = checkWinner9($table, $r, $c);
         if ($winner != '') {
             echo($winner. ' wins') . "<br>";
             echo('game over'). "<br>";
