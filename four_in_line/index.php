@@ -39,36 +39,22 @@ if (array_key_exists('r', $_REQUEST) && array_key_exists('c', $_REQUEST)) {
         $entries['count'] = array_key_exists('count', $entries) ? $entries['count'] + 1 : 1;
         $table[$r][$c] = $entries['count'] % 2 === 0 ? 'o' : "x"; 
         saveEntries($entries);
-        $winner = checkWinner1($table, $r, $c);
-        if ($winner != '') {
-            echo($winner. ' wins') . "<br>";
+
+        try {
+            checkWinner1($table, $r, $c, 1, 0); 
+            checkWinner1($table, $r, $c, 1, -1);
+            checkWinner1($table, $r, $c, 1, 1);
+            checkWinner1($table, $r, $c, 0, 1);
+            checkWinner1($table, $r, $c, 0, -1);
+        }
+        catch (Exception $e) {
+            echo($e->getMessage(). ' wins') . "<br>";
             echo('game over');
             resetEntries();
-        }  
-        $winner = checkWinner2($table, $r, $c);
-        if ($winner != '') {
-            echo($winner. ' wins') . "<br>";
-            echo('game over'). "<br>";
-            resetEntries();
-        }  
-        $winner = checkWinner3($table, $r, $c);
-        if ($winner != '') {
-            echo($winner. ' wins') . "<br>";
-            echo('game over'). "<br>";
-            resetEntries();
-        }  
-        $winner = checkWinner4($table, $r, $c);
-        if ($winner != '') {
-            echo($winner. ' wins') . "<br>";
-            echo('game over'). "<br>";
-            resetEntries();
         }
-        $winner = checkWinner5($table, $r, $c);
-        if ($winner != '') {
-            echo($winner. ' wins') . "<br>";
-            echo('game over'). "<br>";
-            resetEntries();
-        }  
+
+
+
         $winner = checkWinner6($table, $r, $c);
         if ($winner != '') {
             echo($winner. ' wins') . "<br>";

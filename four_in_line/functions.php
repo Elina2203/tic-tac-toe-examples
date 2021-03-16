@@ -40,82 +40,22 @@ return true;
     return false;
 }
 
-function checkWinner1($table, $r, $c) {
-    if (getEntry($table, $r+1, $c) ==
-        getEntry($table, $r+2, $c) &&
-        getEntry($table, $r+2, $c)==
-        getEntry($table, $r+3, $c))
-        if (
-        getEntry($table, $r+1, $c) ==
-        getEntry($table, $r, $c))
-         {
-return $table[$r][$c];     
+function checkWinner1($table, $r, $c, $y_axis = 0, $x_axis = 0) {
+    $value = getEntry($table, $r, $c);
+    $count = 0;
+
+    for ($i = 1; $i <= 3; $i++) {
+        $r = $r + $y_axis;
+        $c = $c + $x_axis;
+        if (getEntry($table, $r, $c) == $value) {
+            $count++; 
+        }
     }
-    else {
-return '';
+    if ($count == 3) {
+        throw new Exception($value);
     }
-}   
-    
-function checkWinner2($table, $r, $c) {
-    if (getEntry($table, $r+1, $c-1) ==
-        getEntry($table, $r+2, $c-2) &&
-        getEntry($table, $r+2, $c-2)==
-        getEntry($table, $r+3, $c-3))
-        if (
-        getEntry($table, $r+1, $c-1) ==
-        getEntry($table, $r, $c))
-         {
-return $table[$r][$c];     
-    }
-    else {
-return '';
-    }
-}   
-function checkWinner3($table, $r, $c) {
-    if (getEntry($table, $r+1, $c+1) ==
-        getEntry($table, $r+2, $c+2) &&
-        getEntry($table, $r+2, $c+2)==
-        getEntry($table, $r+3, $c+3))
-        if (
-        getEntry($table, $r+1, $c+1) ==
-        getEntry($table, $r, $c))
-         {
-return $table[$r][$c];     
-    }
-    else {
-return '';
-    }
-}   
-function checkWinner4($table, $r, $c) {
-    if (getEntry($table, $r, $c+1) ==
-        getEntry($table, $r, $c+2) &&
-        getEntry($table, $r, $c+2)==
-        getEntry($table, $r, $c+3))
-        if (
-        getEntry($table, $r, $c+1) ==
-        getEntry($table, $r, $c))
-         {
-return $table[$r][$c];     
-    }
-    else {
-return '';
-    }
-}   
-function checkWinner5($table, $r, $c) {
-    if (getEntry($table, $r, $c-1) ==
-        getEntry($table, $r, $c-2) &&
-        getEntry($table, $r, $c-2)==
-        getEntry($table, $r, $c-3))
-        if (
-        getEntry($table, $r, $c-1) ==
-        getEntry($table, $r, $c))
-         {
-return $table[$r][$c];     
-    }
-    else {
-return '';
-    }
-}   
+}
+
 function checkWinner6($table, $r, $c) {
     if (getEntry($table, $r, $c+1) ==
         getEntry($table, $r, $c-1) &&
