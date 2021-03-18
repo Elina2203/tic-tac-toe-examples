@@ -10,7 +10,7 @@ include 'functions.php';
 <link rel="stylesheet" href="style.css">
 
 <?php
-
+// проверяем, существует ли ключ reset
 if (array_key_exists('reset', $_REQUEST)) {
     resetEntries();
     echo "RESET";
@@ -114,7 +114,7 @@ if (array_key_exists('r', $_REQUEST) && array_key_exists('c', $_REQUEST)) {
     ?>
 
 </div>
-
+<!-- ссылка в адресную -->
 <a href="?reset=Reset">RESET</a>
 
 <pre><?=print_r($table, true)?></pre>
