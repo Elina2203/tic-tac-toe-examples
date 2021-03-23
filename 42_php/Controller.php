@@ -26,16 +26,4 @@ public function increase($id) {
     file_put_contents($this->file_name, json_encode($this->db,JSON_PRETTY_PRINT));
     echo $new_value;
     }
-    // public function increase($id) {
-    //    $n = 0;
-    //     $new_value = $_GET['id'] + $n; 
-    //     if($_GET['id'] = $new_value){
-    //         $new_value = $_GET['id'] + 1;
-    //     }
-    //     $this->db['links'][$id] = $new_value;
-    //     file_put_contents($this->file_name, json_encode($this->db,JSON_PRETTY_PRINT));
-    //     echo $new_value;
-        
-    //     }
-
 }
