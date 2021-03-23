@@ -36,7 +36,7 @@ class FormManager extends DataManager//родительский класс DataM
             $req['message'] !== '' &&
             $req['id'] !== ''
         ) {
-            echo "test add method";
+            //вызывается функция update, где подается значение id и массив с нашими двумя записями.
             $this->update(
                 $req['id'],
                 [

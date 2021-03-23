@@ -4,9 +4,10 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 
-include_once('DataManager.php');
+include_once('DataManager.php');//один раз подключаем файлы
 include_once('FormManager.php');
-$manager = new FormManager();
+$manager = new FormManager();// создаем новый объект из класса FormManager. Для того чтобы создать новый объект
+//должен существовать класс. Поэтому мы подключаемся к файлу FormManage, где создан этот класс.
 
 ?>
 
@@ -21,6 +22,8 @@ $manager = new FormManager();
 <form action="?action=update" method="post">
     <select name="id">
         <?php
+        //для каждого элемента из массива. $manager->getAll() -это мы получаем массив.
+        
             foreach ($manager->getAll() as $key => $value) {
                 $username = $value['username'];
                
