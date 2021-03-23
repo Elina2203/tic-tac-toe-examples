@@ -43,49 +43,51 @@ if (array_key_exists('r', $_REQUEST) && array_key_exists('c', $_REQUEST)) {
             checkWinner($table, $r, $c, 1, 1);
             checkWinner($table, $r, $c, 0, 1);
             checkWinner($table, $r, $c, 0, -1);
+            
         }  
         catch (Exception $e) {
             echo($e->getMessage(). ' wins') . "<br>";
             echo('game over');
             resetEntries();
         }
+        
 
-        $winner = checkWinner6($table, $r, $c);
-        if ($winner != '') {
-            echo($winner. ' wins') . "<br>";
-            echo('game over'). "<br>";
-            resetEntries(). "<br>";
-        }  
-        $winner = checkWinner7($table, $r, $c);
-        if ($winner != '') {
-            echo($winner. ' wins') . "<br>";
-            echo('game over'). "<br>";
-            resetEntries();
-        }  
-     $winner = checkWinner8($table, $r, $c);
-        if ($winner != '') {
-            echo($winner. ' wins') . "<br>";
-            echo('game over'). "<br>";
-            resetEntries();
-        }  
-        $winner = checkWinner9($table, $r, $c);
-        if ($winner != '') {
-            echo($winner. ' wins') . "<br>";
-            echo('game over'). "<br>";
-            resetEntries();
-        }  
-        $winner = checkWinner10($table, $r, $c);
-        if ($winner != '') {
-            echo($winner. ' wins') . "<br>";
-            echo('game over'). "<br>";
-            resetEntries();
-        }  
-        $winner = checkWinner11($table, $r, $c);
-        if ($winner != '') {
-            echo($winner. ' wins') . "<br>";
-            echo('game over'). "<br>";
-            resetEntries();
-        }  
+//         $winner = checkWinner6($table, $r, $c);
+//         if ($winner != '') {
+//             echo($winner. ' wins') . "<br>";
+//             echo('game over'). "<br>";
+//             resetEntries(). "<br>";
+//         }  
+//         $winner = checkWinner7($table, $r, $c);
+//         if ($winner != '') {
+//             echo($winner. ' wins') . "<br>";
+//             echo('game over'). "<br>";
+//             resetEntries();
+//         }  
+//      $winner = checkWinner8($table, $r, $c);
+//         if ($winner != '') {
+//             echo($winner. ' wins') . "<br>";
+//             echo('game over'). "<br>";
+//             resetEntries();
+//         }  
+//         $winner = checkWinner9($table, $r, $c);
+//         if ($winner != '') {
+//             echo($winner. ' wins') . "<br>";
+//             echo('game over'). "<br>";
+//             resetEntries();
+//         }  
+//         $winner = checkWinner10($table, $r, $c);
+//         if ($winner != '') {
+//             echo($winner. ' wins') . "<br>";
+//             echo('game over'). "<br>";
+//             resetEntries();
+//         }  
+//         $winner = checkWinner11($table, $r, $c);
+//         if ($winner != '') {
+//             echo($winner. ' wins') . "<br>";
+//             echo('game over'). "<br>";
+//             resetEntries();
+//         }  
     }
     
 }

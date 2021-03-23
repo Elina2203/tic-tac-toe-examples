@@ -45,7 +45,7 @@ function checkWinner($table, $r, $c, $y_axis = 0, $x_axis = 0) {
     $value = getEntry($table, $r, $c);
     $count = 0;
 
-    for ($i = 1; $i <= 3; $i++) {
+    for ($i = 0; $i <= 3; $i++) {
         $r = $r + $y_axis;
         $c = $c + $x_axis;
         if (getEntry($table, $r, $c) == $value) {
@@ -55,7 +55,11 @@ function checkWinner($table, $r, $c, $y_axis = 0, $x_axis = 0) {
     if ($count == 3) {
         throw new Exception($value);
     }
+
 }
+
+    
+
     
 // horizontal   00*0
 function checkWinner6($table, $r, $c) {
@@ -105,7 +109,8 @@ function checkWinner9($table, $r, $c) {
     if (
         getEntry($table, $r+1, $c-1) == getEntry($table, $r, $c) &&
         getEntry($table, $r+2, $c-2) == getEntry($table, $r, $c) &&
-        getEntry($table, $r-1, $c+1) == getEntry($table, $r, $c)) {     
+        getEntry($table, $r-1, $c+1) == getEntry($table, $r, $c)) { 
+
         return $table[$r][$c]; 
         }
     else {
@@ -132,7 +137,8 @@ function checkWinner11($table, $r, $c) {
     if (
         getEntry($table, $r+1, $c+1) == getEntry($table, $r, $c) &&
         getEntry($table, $r+2, $c+2) == getEntry($table, $r, $c) &&
-        getEntry($table, $r-1, $c-1) == getEntry($table, $r, $c)) {     
+        getEntry($table, $r-1, $c-1) == getEntry($table, $r, $c)) { 
+
         return $table[$r][$c]; 
         }
     else {
